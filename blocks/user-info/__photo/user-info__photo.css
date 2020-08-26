@@ -1,0 +1,19 @@
+.user-info__photo {
+  width: 150px;
+  height: 150px;
+  min-width: 150px;
+  border-radius: 50%;
+  transition: .2s linear;
+  cursor: pointer;
+}
+
+.user-info__photo:hover { 
+  opacity: .5;
+  transition: .2s linear;
+}
+
+@media screen and (max-width: 980px) {
+  .user-info__photo {
+    margin-top: 40px;
+  }
+}

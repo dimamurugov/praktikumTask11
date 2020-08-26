@@ -1,0 +1,8 @@
+.popup__error-massage {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    color: #FF0000;
+    opacity: 1;
+}

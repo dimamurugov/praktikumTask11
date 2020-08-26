@@ -1,0 +1,10 @@
+.popup__button {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #000000;
+  margin-top: 48px;
+  font-size: 36px;
+  background-color: rgba(0, 0, 0, 0.15);
+  color: #000000;
+  opacity: 0.2;
+}

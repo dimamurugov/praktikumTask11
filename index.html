@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <img class="user-info__photo" src="images/avatar.jpg" alt="">
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="user-info__edit-button">Edit</button>
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+
+    </div>
+    <div class="popup popup_theme_add-card">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close">
+        <h3 class="popup__title">Новое место</h3>
+        <form class="popup__form popup__form_add" name="new" >
+          <div class="popup__input-container">
+            <input id="name" type="text" name="name"  required minlength="2" maxlength="30" class="popup__input popup__input_type_name" placeholder="Название">
+            <span id="error-name" class="popup__error-massage popup__error-massage_hidden"></span>
+          </div>
+          <div>
+            <input id="link" type="url" name="link" required minlength="2"  class="popup__input popup__input_type_link-url" placeholder="Ссылка на картинку">
+            <span id="error-link" class="popup__error-massage popup__error-massage_hidden"></span>
+          </div class="popup__input-container">
+            <button type="submit" name="button" class="button popup__button popup__button_add" >+</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_theme_edit-popup">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close popur__close_theme_edit-popup">
+        <h3 class="popup__title">Редактировать профиль</h3>
+        <form class="popup__form popup__form_edit" name="edit">
+          <div class="popup__input-container">
+            <input id="profile-name" type="text" name="nameField" required minlength="2" maxlength="30" class="popup__input popup__input_type_profile-name" placeholder="Имя">
+            <span id="error-profile-name" class="popup__error-massage"></span>
+          </div>
+          <div class="popup__input-container">  
+            <input id="description" type="text" name="description" required class="popup__input popup__input_type_profile-description" placeholder="Описание">
+            <span id="error-description" class="popup__error-massage"></span>
+          </div>  
+          <button type="submit" id="submit" name="button" class="button popup__button popup__button_theme_edit-popup popup__button_edit" >Сохранить</button>   
+          
+        </form>
+      </div>
+    </div>
+
+    <div class="popup popup_theme_image">
+      <div class="popup__container-for-image">
+        <img class="popup__close popur__close_theme_image" src="./images/close.svg" alt="">
+        <img class="popup__image" src="https://pictures.s3.yandex.net/frontend-developer/cards-compressed/arkhyz.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="popup popup_theme_avatar">
+      <div class="popup__content">
+        <img src="./images/close.svg" alt="" class="popup__close popur__close_theme_avatar-popup">
+        <h3 class="popup__title">Обновить аватар</h3>
+        <form class="popup__form popup__form_avatar" name="avatar">
+         
+          <div class="popup__input-container">
+            <input id="link" type="url" name="linkField" required minlength="2" maxlength="100" class="popup__input popup__input_type_avatar" placeholder="Ссылка">
+            <span id="error-link" class="popup__error-massage"></span>
+          </div>
+        
+          <button type="submit" id="submit" name="button" class="button popup__button popup__button_theme_edit-popup popup__button_edit" >Сохранить</button>   
+          
+        </form>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/dataNameError.js" ></script>
+  <script src="js/initialCards.js" ></script>
+  <script src="js/cardList.js"></script>
+  <script src="js/card.js"></script>
+  <script src="js/popup.js"></script>
+  <script src="js/userInfo.js"></script>
+  <script src="js/formValidator.js"></script>
+  <script src="js/imagePopup.js"></script>
+  <script src="js/formPopup.js"></script>
+  <script src="js/api.js"></script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

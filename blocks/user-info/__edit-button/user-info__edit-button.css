@@ -1,0 +1,16 @@
+.user-info__edit-button {
+    width: 38px;
+    background-color: #000000;
+    border: 1px solid white;
+    margin-top: 24px;
+    cursor: pointer;
+
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #FFFFFF;
+}
