@@ -1,4 +1,4 @@
-class UserInfo {
+export default class UserInfo {
     constructor(name, description, avatar, api) {
 
         this.name = name;
@@ -6,11 +6,6 @@ class UserInfo {
         this.avatar = avatar;
         this.api = api;
 
-        /*
-         Можно лучше:
-         - удалить неиспользуемыую переменную
-         + Удалил
-        */
 
         this.nameProfile = this.name.textContent;
         this.descriptionProfile = this.description.textContent;
@@ -25,11 +20,6 @@ class UserInfo {
 
     setUserInfo(name, description, avatarLink) {
         
-        /*
-         Надо исправить:
-         - Дополнить метод ссылкой на аватар
-         + Дополнил
-        */
 
         this.nameProfile = name;
         this.descriptionProfile = description;
@@ -56,12 +46,6 @@ class UserInfo {
             this.myId = data._id;
             
             this.setUserInfo(data.name, data.about, data.avatar);
-
-            /*
-             Надо исправить:
-             - Для исправления внутренних свойств есть метод setUserInfo
-             + Использовал метод setUserInfo
-            */
 
             this.updateUserInfo()
         }).catch((err) => {

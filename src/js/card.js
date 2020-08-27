@@ -1,4 +1,4 @@
-class Card {
+export default class Card {
   constructor(data, openImage, api, _getMyID, _getUserProfile) {
         this.data = data;
         this.openImage = openImage;
@@ -66,22 +66,8 @@ class Card {
     }
 
     like() {
-      
-      /*
-       - Надо исправить:
-       - Удалить console.log()
-       + Убрал
-      */
 
       if (this.likeIcon.classList.contains('place-card__like-icon_liked')) {
-
-        /*
-         Надо исправить:
-         - Поиск одного и того же DOM элемента должен выполняться один раз.
-         Вынести this.placeCard.querySelector(".place-card__like-icon") в константу
-         
-         + вынес в this.LikeItem
-        */
 
        this.likeIcon.classList.remove('place-card__like-icon_liked');
 
@@ -104,11 +90,6 @@ class Card {
     remove(event) {
       const selectCard = this.placeCard.closest('.place-card');
       event.stopPropagation();
-      /*
-       Надо испарвить:
-       - event берется не из параметров функции
-       + добавил параметр event
-       */
       if (window.confirm("Вы действительно хотите удалить эту картоку?")) {
         this.api.deleteCard(this.data._id)
         .then(() => {
@@ -126,11 +107,6 @@ class Card {
       const myName = this._getUserProfile().name;
       return this.data.likes.find((item) => {
         return item.name === myName
-        /*
-           Можно лучше:
-           - Использвать === вместо ==
-           + Добавил ===
-        */
       });  
     }
 
