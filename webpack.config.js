@@ -8,9 +8,7 @@ const isDev = process.env.NODE_ENV === 'development';
 const path = require('path');
 const webpack = require('webpack');
 
-new webpack.DefinePlugin({
-    'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
-})
+
   
 
 module.exports = {
@@ -64,7 +62,10 @@ module.exports = {
             template: './src/index.html',
             filename: 'index.html'
         }),
-        new WebpackMd5Hash()
+        new WebpackMd5Hash(),
+        new webpack.DefinePlugin({
+            'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+        })
     ]
      
 }
