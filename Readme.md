@@ -6,5 +6,5 @@
 2. Потестируйте мой настроенный WebPack
 3. Оставьте фидбэк)
 
-## [ссылка на мою работу](dimamurugov.github.io)
-### v0.0.1
+## [ссылка на мою работу](https://dimamurugov.github.io/praktikumTask11/)
+### v0.0.2
