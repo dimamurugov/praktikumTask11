@@ -30,8 +30,12 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                         (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                        'css-loader', 
-                        'postcss-loader'
+                        {
+                            loader:'css-loader',
+                            options: {
+                                importLoaders: 1
+                            } 
+                        } 
                     ], 
             },
             {
@@ -39,8 +43,17 @@ module.exports = {
                 loader: 'file-loader?name=./vendor/[name].[ext]'
             },
             {
-                test: /\.(png|jpe?g|gif|svg|webp)$/i,
-                use: 'file-loader?name=./images/[name].[ext]&esModule=false'
+                test: /\.(gif|png|jpe?g|svg|webp)$/i,
+                use: [
+                  'file-loader',
+                  {
+                    loader: 'image-webpack-loader',
+                    options: {
+                      bypassOnDebug: true,  
+                      disable: true,  
+                    },
+                  },
+                ],
             }
         ]
     },
