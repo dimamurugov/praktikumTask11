@@ -1,4 +1,6 @@
-class FormPopup extends Popup {
+import Popup from './popup';
+
+export default class FormPopup extends Popup {
     constructor(popup, form, openButton, setSubmitButtonState, clearErrorMassege, funOpenForm, funSubmitForm) {
         super(popup);
         this.form = form;
@@ -38,8 +40,3 @@ class FormPopup extends Popup {
 }
 
 
-/*
- Надо исправить:
- - openForm и submitForm передавать в конструкторе, а не переназначать методы внутри script.js
- + вместо переиспользования функций в script.js создал соответстувующие колбэк функии и передаю в конструктор formPopup где они вызываются в метода openForm и submitForm соответственно
-*/

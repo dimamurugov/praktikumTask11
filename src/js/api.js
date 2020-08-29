@@ -1,4 +1,4 @@
-class Api {
+export default class Api {
     constructor(options) {
         this.options = options;
     }
@@ -12,7 +12,7 @@ class Api {
     
     
     getAboutMe() {
-        return fetch('https://praktikum.tk/cohort11/users/me', {
+        return fetch(`${this.options.baseUrl}/users/me`, {
             headers: {
                 authorization: this.options.headers.authorization
               }
@@ -21,7 +21,7 @@ class Api {
         });
     }
     getMassCards() {
-        return fetch('https://praktikum.tk/cohort11/cards',{
+        return fetch(`${this.options.baseUrl}/cards`,{
             headers: {
                 authorization: this.options.headers.authorization
             }
@@ -31,7 +31,7 @@ class Api {
     }
     
     patchEditChangesProfile(name, about) {
-        return fetch('https://praktikum.tk/cohort11/users/me', {
+        return fetch(`${this.options.baseUrl}/users/me`, {
             method: 'PATCH',
             headers: {
               authorization: this.options.headers.authorization,
@@ -46,7 +46,7 @@ class Api {
         });
     }
     postServerCard(name, link) {
-        return fetch('https://praktikum.tk/cohort11/cards', {
+        return fetch(`${this.options.baseUrl}/cards`, {
             method: 'POST',
             headers: {
                 authorization: this.options.headers.authorization,
@@ -61,7 +61,7 @@ class Api {
         });
     }
     deleteCard(idCard) {
-        return fetch(`https://praktikum.tk/cohort11/cards/${idCard}`, {
+        return fetch(`${this.options.baseUrl}/cards/${idCard}`, {
             method: 'DELETE',
             headers: {
                 authorization: this.options.headers.authorization
@@ -71,7 +71,7 @@ class Api {
         });
     }
     putLikeCard(idCard) {
-        return fetch(`https://praktikum.tk/cohort11/cards/like/${idCard}`,{
+        return fetch(`${this.options.baseUrl}/cards/like/${idCard}`,{
             method: 'PUT',
             headers: {
                 authorization: this.options.headers.authorization
@@ -81,7 +81,7 @@ class Api {
         });
     }
     deleteLikeCard(idCard) {
-        return fetch(`https://praktikum.tk/cohort11/cards/like/${idCard}`, {
+        return fetch(`${this.options.baseUrl}/cards/like/${idCard}`, {
             method: 'DELETE',
             headers: {
                 authorization: this.options.headers.authorization
@@ -92,7 +92,7 @@ class Api {
     }
     
     patchUploadAvatar(link) {
-        return fetch(`https://praktikum.tk/cohort11/users/me/avatar`, {
+        return fetch(`${this.options.baseUrl}/users/me/avatar`, {
             method: 'PATCH',
             headers: {
                 authorization: this.options.headers.authorization,
